@@ -1,0 +1,211 @@
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffba60"
+    tools:context=".userInterface.HomeFragmentUser">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="32dp"
+            android:paddingTop="16dp"
+            android:paddingRight="32dp"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_weight="40"
+                android:fontFamily="@font/bariol_bold"
+                android:text="@string/hey_what_would_you_like_to_booking_today"
+                android:textColor="@color/PrimaryColor"
+                android:textSize="30sp"
+                app:autoSizeTextType="uniform" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="60"
+                android:src="@drawable/refer_icon"
+                tools:ignore="ContentDescription,ImageContrastCheck" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/custom_border_layout"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/date_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Day Come"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    app:drawableStartCompat="@drawable/calendar"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="To"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/date_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+
+                    android:hint="Date Leave"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    app:drawableStartCompat="@drawable/calendar"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <!--            <RelativeLayout-->
+            <!--                android:id="@+id/layout_date"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content">-->
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/date_start"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="30dp"-->
+            <!--                    android:layout_alignParentStart="true"-->
+            <!--                    android:layout_marginStart="10dp"-->
+            <!--                    android:layout_marginTop="10dp"-->
+            <!--                    android:layout_marginEnd="10dp"-->
+            <!--                    android:layout_marginBottom="10dp"-->
+            <!--                    android:text="01/01/2022"-->
+            <!--                    android:textAlignment="center"-->
+            <!--                    android:textSize="20sp"-->
+            <!--                    app:drawableStartCompat="@drawable/calendar"-->
+            <!--                    tools:ignore="HardcodedText" />-->
+
+            <!--                <View-->
+            <!--                    android:id="@+id/line"-->
+            <!--                    android:layout_width="10dp"-->
+            <!--                    android:layout_height="1dp"-->
+            <!--                    android:layout_centerInParent="true"-->
+            <!--                    android:layout_toEndOf="@+id/date_start"-->
+            <!--                    android:background="@color/black" />-->
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/date_end"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="30dp"-->
+            <!--                    android:layout_alignParentEnd="true"-->
+            <!--                    android:layout_marginStart="10dp"-->
+            <!--                    android:layout_marginTop="10dp"-->
+            <!--                    android:layout_marginEnd="10dp"-->
+            <!--                    android:layout_marginBottom="10dp"-->
+            <!--                    android:text="01/08/2022"-->
+            <!--                    android:textAlignment="center"-->
+            <!--                    android:textSize="20sp"-->
+            <!--                    tools:ignore="HardcodedText" />-->
+
+            <!--            </RelativeLayout>-->
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown" />
+
+            <Button
+                android:id="@+id/booking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_search_view"
+                android:text="@string/booking" />
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:background="@color/white">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                tools:itemCount="5"
+                tools:listitem="@layout/main_card" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/review"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:text="@string/review"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/tv_seeall"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:layout_toEndOf="@id/review"
+                android:text="@string/see_all"
+                android:textAlignment="textEnd"
+                android:textColor="@color/blue_soft"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_review"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:background="@color/white"
+            tools:itemCount="5"
+            tools:listitem="@layout/review" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
